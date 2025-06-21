@@ -1,0 +1,15 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/corebackend/$1" }
+  ],
+  "functions": {
+    "backend/**.py": {
+      "runtime": "python@3.11",
+      "maxDuration": 10
+    }
+  },
+  "buildCommand": "pip install -r backend/requirements.txt && cd frontend && npm i && npm run build",
+  "ignoreCommand": "git ls-files -co --exclude-standard"
+}git remote add origin https://github.com/lanreakomolafe/my-homeessentials.git
+git branch -M main
+git push -u origin main
